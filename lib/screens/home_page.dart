@@ -40,12 +40,10 @@ class MyHomePage extends StatelessWidget {
             ),
             ListTile(
               title: Text("home remedies for hair"),
-              subtitle: Text("by aisha "),
+              subtitle: Text("by aisha have add git hub rep"),
             ),
-          
           ],
         ),
-        
       ),
     );
   }
