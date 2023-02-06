@@ -38,9 +38,39 @@ class MyHomePage extends StatelessWidget {
             SizedBox(
               height: 20,
             ),
-            ListTile(
-              title: Text("home remedies for hair"),
-              subtitle: Text("by aisha have add git hub rep"),
+            //TITTLE,SUBTITLE SECTION
+            Padding(
+              padding: EdgeInsets.only(left: 20, right: 20),
+              child: Row(
+                children: [
+                  Expanded(
+                      child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "Healthy Hair Routine",
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 15),
+                      ),
+                      SizedBox(
+                        height: 2,
+                      ),
+                      Text(
+                        "By Aisha",
+                        style: TextStyle(
+                          color: Colors.black54,
+                        ),
+                      ),
+                    ],
+                  )),
+                  Icon(
+                    Icons.star,
+                    color: Colors.orange,
+                    size: 18,
+                  ),
+                  Text("32"),
+                ],
+              ),
             ),
           ],
         ),
