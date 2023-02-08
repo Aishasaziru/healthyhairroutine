@@ -72,6 +72,55 @@ class MyHomePage extends StatelessWidget {
                 ],
               ),
             ),
+            //SPACE
+            SizedBox(
+              height: 30,
+            ),
+            //ACTION SECTION
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 60),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  //FIRST CHILD
+                  Column(
+                    children: [
+                      Icon(
+                        Icons.call,
+                        color: Colors.blue,
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Text(
+                        "CALL",
+                        style: TextStyle(color: Colors.blue),
+                      ),
+                    ],
+                  ),
+                  //SECOND CHILD
+                  Column(
+                    children: [
+                      Icon(
+                        Icons.share,
+                        color: Colors.blue,
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Text(
+                        "SHARE",
+                        style: TextStyle(color: Colors.blue),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+            //SPACE
+            SizedBox(
+              height: 20,
+            ),
           ],
         ),
       ),
