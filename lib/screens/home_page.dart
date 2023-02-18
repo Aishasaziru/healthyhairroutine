@@ -114,6 +114,22 @@ class MyHomePage extends StatelessWidget {
                       ),
                     ],
                   ),
+                  //THIRD CHILD
+                  Column(
+                    children: [
+                      Icon(
+                        Icons.message,
+                        color: Colors.blue,
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Text(
+                        "MESSAGE",
+                        style: TextStyle(color: Colors.blueAccent),
+                      ),
+                    ],
+                  ),
                 ],
               ),
             ),

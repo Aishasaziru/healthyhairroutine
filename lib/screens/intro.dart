@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_flutter_project/screens/home_page.dart';
 
 // ignore: camel_case_types
 class intro extends StatelessWidget {
@@ -8,26 +9,43 @@ class intro extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        padding: EdgeInsets.all(20),
+        padding: const EdgeInsets.all(20),
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
         child: SingleChildScrollView(
           child: Column(
             children: [
               //FIRST CONTAINER
-              Container(
-                width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.width * 0.22,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage(
-                      "images/blondyhair.jpg",
+              InkWell(
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => const MyHomePage()));
+                },
+                child: Container(
+                  width: MediaQuery.of(context).size.width,
+                  height: MediaQuery.of(context).size.width * 0.22,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: const AssetImage(
+                        "images/hair trim.jpg",
+                      ),
+                      fit: BoxFit.cover,
+                      colorFilter: ColorFilter.mode(
+                          Color.fromARGB(255, 196, 152, 167).withOpacity(0.2),
+                          BlendMode.color),
                     ),
-                    fit: BoxFit.cover,
-                    colorFilter: ColorFilter.mode(
-                        Colors.pinkAccent.withOpacity(0.5), BlendMode.darken),
+                    borderRadius: BorderRadius.circular(20),
                   ),
-                  borderRadius: BorderRadius.circular(20),
+                  child: Center(
+                    child: const Text(
+                      "",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
                 ),
               ),
             ],
