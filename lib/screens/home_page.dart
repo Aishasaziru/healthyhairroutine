@@ -28,7 +28,7 @@ class MyHomePage extends StatelessWidget {
             //IMAGE
             Container(
               width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.height * 0.3,
+              height: MediaQuery.of(context).size.height * 0.6,
               decoration: const BoxDecoration(
                   image: DecorationImage(
                       image: AssetImage("images/zee.jpeg"), fit: BoxFit.cover)),
@@ -80,65 +80,12 @@ class MyHomePage extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  //FIRST CHILD
-                  Column(
-                    children: const [
-                      Icon(
-                        Icons.call,
-                        color: Colors.blue,
-                      ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Text(
-                        "CALL",
-                        style: TextStyle(color: Colors.blue),
-                      ),
-                    ],
-                  ),
-
-                  //SECOND CHILD
-                  Column(
-                    children: const [
-                      Icon(
-                        Icons.share,
-                        color: Colors.blue,
-                      ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Text(
-                        "SHARE",
-                        style: TextStyle(color: Colors.blue),
-                      ),
-                    ],
-                  ),
-                  //THIRD CHILD
-                  Column(
-                    children: const [
-                      Icon(
-                        Icons.message,
-                        color: Colors.blue,
-                      ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Text(
-                        "MESSAGE",
-                        style: TextStyle(color: Colors.blueAccent),
-                      ),
-                    ],
-                  ),
-                ],
+                children: [],
               ),
             ),
             const Expanded(
               child: Padding(
                 padding: EdgeInsets.symmetric(horizontal: 20),
-                child: Text(
-                  "Hair care can often be challenging, especially if you are limited on time, but keeping your hair healthy and stylish can help you feel more confident and attractive. Creating a hair care routine is easy and involves maintaining the health of your hair and applying beneficial products to your hair. Luckily, your hair doesn't always need attention every day, and many things in a hair care routine can be done only once or twice a week.",
-                ),
               ),
             ),
 

@@ -23,7 +23,7 @@ class intro extends StatelessWidget {
                 },
                 child: Container(
                   width: MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.width * 0.22,
+                  height: MediaQuery.of(context).size.width * 0.7,
                   decoration: BoxDecoration(
                     image: DecorationImage(
                       image: const AssetImage("images/logo.jpeg"),
