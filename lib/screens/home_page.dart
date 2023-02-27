@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 
 class MyHomePage extends StatelessWidget {
-  const MyHomePage({super.key});
+  const MyHomePage({Key? key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +14,7 @@ class MyHomePage extends StatelessWidget {
         actions: [
           IconButton(
             onPressed: () {},
-            icon: Icon(
+            icon: const Icon(
               Icons.search,
               color: Colors.white,
             ),
@@ -29,24 +29,23 @@ class MyHomePage extends StatelessWidget {
             Container(
               width: MediaQuery.of(context).size.width,
               height: MediaQuery.of(context).size.height * 0.3,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                   image: DecorationImage(
-                      image: AssetImage("images/blondyhair.jpg"),
-                      fit: BoxFit.cover)),
+                      image: AssetImage("images/zee.jpeg"), fit: BoxFit.cover)),
             ),
             //SPACE
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             //TITTLE,SUBTITLE SECTION
             Padding(
-              padding: EdgeInsets.only(left: 20, right: 20),
+              padding: const EdgeInsets.only(left: 20, right: 20),
               child: Row(
                 children: [
                   Expanded(
                       child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
+                    children: const [
                       Text(
                         "Healthy Hair Routine",
                         style: TextStyle(
@@ -63,28 +62,28 @@ class MyHomePage extends StatelessWidget {
                       ),
                     ],
                   )),
-                  Icon(
+                  const Icon(
                     Icons.star,
                     color: Colors.orange,
                     size: 18,
                   ),
-                  Text("32"),
+                  const Text("32"),
                 ],
               ),
             ),
             //SPACE
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
             //ACTION SECTION
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 60),
+              padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   //FIRST CHILD
                   Column(
-                    children: [
+                    children: const [
                       Icon(
                         Icons.call,
                         color: Colors.blue,
@@ -98,9 +97,10 @@ class MyHomePage extends StatelessWidget {
                       ),
                     ],
                   ),
+
                   //SECOND CHILD
                   Column(
-                    children: [
+                    children: const [
                       Icon(
                         Icons.share,
                         color: Colors.blue,
@@ -116,7 +116,7 @@ class MyHomePage extends StatelessWidget {
                   ),
                   //THIRD CHILD
                   Column(
-                    children: [
+                    children: const [
                       Icon(
                         Icons.message,
                         color: Colors.blue,
@@ -133,8 +133,17 @@ class MyHomePage extends StatelessWidget {
                 ],
               ),
             ),
+            const Expanded(
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20),
+                child: Text(
+                  "Hair care can often be challenging, especially if you are limited on time, but keeping your hair healthy and stylish can help you feel more confident and attractive. Creating a hair care routine is easy and involves maintaining the health of your hair and applying beneficial products to your hair. Luckily, your hair doesn't always need attention every day, and many things in a hair care routine can be done only once or twice a week.",
+                ),
+              ),
+            ),
+
             //SPACE
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
           ],

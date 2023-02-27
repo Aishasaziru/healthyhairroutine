@@ -9,7 +9,7 @@ class intro extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        padding: const EdgeInsets.all(20),
+        padding: const EdgeInsets.all(10),
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
         child: SingleChildScrollView(
@@ -26,21 +26,19 @@ class intro extends StatelessWidget {
                   height: MediaQuery.of(context).size.width * 0.22,
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                      image: const AssetImage(
-                        "images/hair trim.jpg",
-                      ),
+                      image: const AssetImage("images/logo.jpeg"),
                       fit: BoxFit.cover,
                       colorFilter: ColorFilter.mode(
-                          Color.fromARGB(255, 196, 152, 167).withOpacity(0.2),
+                          Color.fromARGB(255, 59, 155, 172).withOpacity(0.2),
                           BlendMode.color),
                     ),
                     borderRadius: BorderRadius.circular(20),
                   ),
                   child: Center(
                     child: const Text(
-                      "",
+                      "Your hair is your canvas",
                       style: TextStyle(
-                        color: Colors.white,
+                        color: Colors.lightBlue,
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
                       ),
