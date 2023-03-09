@@ -52,7 +52,7 @@ class intro extends StatelessWidget {
                 style: ElevatedButton.styleFrom(
                   primary: Colors.pink,
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20),
+                    borderRadius: BorderRadius.circular(19),
                   ),
                   padding: const EdgeInsets.symmetric(
                     horizontal: 40,
@@ -67,24 +67,27 @@ class intro extends StatelessWidget {
             ),
 
             // SIGN UP BUTTON
-            TextButton(
-              onPressed: () {
-                Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => const SignUpScreen()));
-              },
-              style: TextButton.styleFrom(
-                primary: Colors.pink,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20),
+            SizedBox(
+              width: MediaQuery.of(context).size.width * .65,
+              child: TextButton(
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => const SignUpScreen()));
+                },
+                style: TextButton.styleFrom(
+                  primary: Colors.pink,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(19),
+                  ),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 40,
+                    vertical: 20,
+                  ),
                 ),
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 40,
-                  vertical: 20,
+                child: const Text(
+                  'Sign Up',
+                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                 ),
-              ),
-              child: const Text(
-                'Sign Up',
-                style: TextStyle(fontSize: 16),
               ),
             ),
           ],

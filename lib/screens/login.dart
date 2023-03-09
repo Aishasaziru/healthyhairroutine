@@ -20,7 +20,7 @@ class LoginScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Image.asset(
-                "images/hair1",
+                "images/logo.jpeg",
                 fit: BoxFit.cover,
               ),
               TextFormField(
@@ -79,7 +79,7 @@ class LoginScreen extends StatelessWidget {
                     borderRadius: BorderRadius.circular(20), //Rounded coners
                   ),
                   padding: EdgeInsets.symmetric(
-                    horizontal: 40, //Horizntal padding
+                    horizontal: 40, //Horizntal padding 
                     vertical: 20, //Vertical padding
                   ),
                 ),
