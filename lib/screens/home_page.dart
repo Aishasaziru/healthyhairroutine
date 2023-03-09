@@ -10,7 +10,8 @@ class MyHomePage extends StatelessWidget {
     return Scaffold(
       //APPBAR
       appBar: AppBar(
-        title: const Text("Healthy Hair Routine"),
+        automaticallyImplyLeading: false,
+        title: const Text("Healthy Hair Routine Tips"),
         actions: [
           IconButton(
             onPressed: () {},
@@ -23,13 +24,13 @@ class MyHomePage extends StatelessWidget {
       ),
       //MAIN CONTENT
       body: Container(
+        padding: EdgeInsets.all(16),
         child: ListView(
           children: [
             //IMAGE
             Container(
-              width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.height * 0.6,
-              decoration: const BoxDecoration(
+              height: 200,
+              decoration: BoxDecoration(
                   image: DecorationImage(
                       image: AssetImage("images/zee.jpeg"), fit: BoxFit.cover)),
             ),
@@ -49,25 +50,13 @@ class MyHomePage extends StatelessWidget {
                       Text(
                         "Healthy Hair Routine",
                         style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 15),
+                            fontWeight: FontWeight.bold, fontSize: 16),
                       ),
                       SizedBox(
                         height: 2,
                       ),
-                      Text(
-                        "By Aisha",
-                        style: TextStyle(
-                          color: Colors.black54,
-                        ),
-                      ),
                     ],
                   )),
-                  const Icon(
-                    Icons.star,
-                    color: Colors.orange,
-                    size: 18,
-                  ),
-                  const Text("32"),
                 ],
               ),
             ),
