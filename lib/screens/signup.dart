@@ -7,9 +7,6 @@ class SignUpScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Sign Up'),
-      ),
       body: Stack(
         children: [
           Container(
@@ -29,7 +26,6 @@ class SignUpScreen extends StatelessWidget {
                   TextField(
                     decoration: InputDecoration(
                       labelText: 'Email',
-                      border: OutlineInputBorder(),
                     ),
                   ),
                   SizedBox(height: 16.0),
@@ -37,7 +33,6 @@ class SignUpScreen extends StatelessWidget {
                     obscureText: true,
                     decoration: InputDecoration(
                       labelText: 'Password',
-                      border: OutlineInputBorder(),
                     ),
                   ),
                   SizedBox(height: 16.0),
@@ -45,7 +40,6 @@ class SignUpScreen extends StatelessWidget {
                     obscureText: true,
                     decoration: InputDecoration(
                       labelText: 'Confirm Password',
-                      border: OutlineInputBorder(),
                     ),
                   ),
                   SizedBox(height: 16.0),
@@ -53,7 +47,24 @@ class SignUpScreen extends StatelessWidget {
                     onPressed: () {
                       // Implement sign up logic here
                     },
-                    child: Text('Sign Up'),
+                    style: ElevatedButton.styleFrom(
+                      primary: Colors.pink, //Background color
+                      onPrimary: Colors.white, //Text color
+                      shape: RoundedRectangleBorder(
+                        borderRadius:
+                            BorderRadius.circular(20), //Rounded coners
+                      ),
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 40, //Horizntal padding
+                        vertical: 20, //Vertical padding
+                      ),
+                    ),
+                    child: Text(
+                      'Sign up',
+                      style: TextStyle(
+                        fontSize: 16,
+                      ),
+                    ),
                   ),
                 ],
               ),

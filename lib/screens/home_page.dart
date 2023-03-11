@@ -31,8 +31,9 @@ class MyHomePage extends StatelessWidget {
             Container(
               height: 200,
               decoration: BoxDecoration(
-                  image: DecorationImage(
-                      image: AssetImage("images/zee.jpeg"), fit: BoxFit.cover)),
+                image: DecorationImage(
+                    image: AssetImage("images/zee.jpeg"), fit: BoxFit.cover),
+              ),
             ),
             //SPACE
             const SizedBox(
