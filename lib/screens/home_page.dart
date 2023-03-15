@@ -1,9 +1,41 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
+import 'package:my_flutter_project/screens/info_init.dart';
 
 class MyHomePage extends StatelessWidget {
-  const MyHomePage({Key? key});
+  MyHomePage({Key? key});
+  Widget _buildImageCard(BuildContext context, String imagePath, String title) {
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => const InfoImage()),
+        );
+      },
+      child: Card(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Expanded(
+              child: Image.asset(
+                imagePath,
+                fit: BoxFit.cover,
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                title,
+                style: const TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 16,
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -24,15 +56,25 @@ class MyHomePage extends StatelessWidget {
       ),
       //MAIN CONTENT
       body: Container(
-        padding: EdgeInsets.all(16),
+        padding: const EdgeInsets.all(16),
         child: ListView(
           children: [
             //IMAGE
-            Container(
-              height: 200,
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage("images/zee.jpeg"), fit: BoxFit.cover),
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const InfoImage()),
+                );
+              },
+              child: Container(
+                height: 200,
+                decoration: const BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage("images/hairmask.png"),
+                    fit: BoxFit.cover,
+                  ),
+                ),
               ),
             ),
             //SPACE
@@ -49,7 +91,7 @@ class MyHomePage extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: const [
                       Text(
-                        "Healthy Hair Routine",
+                        "HAIR MASK",
                         style: TextStyle(
                             fontWeight: FontWeight.bold, fontSize: 16),
                       ),
@@ -82,6 +124,26 @@ class MyHomePage extends StatelessWidget {
             //SPACE
             const SizedBox(
               height: 20,
+            ),
+            //IMAGES GRIDVIEW
+            GridView.count(
+              crossAxisCount: 2,
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
+              children: [
+                _buildImageCard(
+                    context, "images/zee.jpeg", "Taking Care of Curly Hair"),
+                _buildImageCard(
+                    context, "images/common.jpeg", "How To Take Care of 3c"),
+                _buildImageCard(
+                    context, "images/her3b.webp", "Taking Care of 3b"),
+                _buildImageCard(
+                    context, "images/megan4a.webp", "Taking Cre of 4a"),
+                _buildImageCard(
+                    context, "images/teyonah4b.webp", "Taking Care of 4b"),
+                _buildImageCard(
+                    context, "images/kiki4c.webp", "Taking Care of 4c"),
+              ],
             ),
           ],
         ),

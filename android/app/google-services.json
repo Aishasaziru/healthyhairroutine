@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "340057161046",
+    "project_id": "healthy-hair-routine",
+    "storage_bucket": "healthy-hair-routine.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:340057161046:android:707282f27c175b4b6faaf7",
+        "android_client_info": {
+          "package_name": "com.example.flutter_application_1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "340057161046-c8rs5rnrvedtg5uso4apasktuie6nc8o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCGkPlI-IFhQoOkVBRLd00K9QJ0xefBJ5s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "340057161046-c8rs5rnrvedtg5uso4apasktuie6nc8o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:340057161046:android:8510a07172a757cb6faaf7",
+        "android_client_info": {
+          "package_name": "com.example.my_flutter_project"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "340057161046-c8rs5rnrvedtg5uso4apasktuie6nc8o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCGkPlI-IFhQoOkVBRLd00K9QJ0xefBJ5s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "340057161046-c8rs5rnrvedtg5uso4apasktuie6nc8o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

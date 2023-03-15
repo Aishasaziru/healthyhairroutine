@@ -1,4 +1,5 @@
-import 'dart:html';
+// ignore_for_file: unused_import
+
 import 'package:flutter/material.dart';
 import 'package:my_flutter_project/screens/home_page.dart';
 import './login.dart';
@@ -13,7 +14,7 @@ class LoginScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Padding(
-        padding: EdgeInsets.all(20),
+        padding: const EdgeInsets.all(20),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -25,7 +26,7 @@ class LoginScreen extends StatelessWidget {
               ),
               TextFormField(
                 controller: emailController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: 'Enter your Email',
                 ),
               ),
@@ -34,7 +35,7 @@ class LoginScreen extends StatelessWidget {
               ),
               TextFormField(
                 controller: passwordController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: 'Enter your Password',
                 ),
                 obscureText: true,
@@ -44,7 +45,7 @@ class LoginScreen extends StatelessWidget {
               ),
               TextFormField(
                 controller: passwordController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: 'Confirm Password',
                 ),
                 obscureText: true,
@@ -54,7 +55,7 @@ class LoginScreen extends StatelessWidget {
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
+                children: const <Widget>[
                   Text(
                     "Dont have an Account?",
                     style: TextStyle(fontSize: 16),
@@ -65,25 +66,24 @@ class LoginScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               ElevatedButton(
                 onPressed: () {
                   // Handle login button press
-                  Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => const MyHomePage()));
+                  Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => MyHomePage()));
                 },
                 style: ElevatedButton.styleFrom(
-                  primary: Colors.pink, //Background color
-                  onPrimary: Colors.white, //Text color
+                  foregroundColor: Colors.white, primary: Colors.pink, //Text color
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20), //Rounded coners
                   ),
-                  padding: EdgeInsets.symmetric(
+                  padding: const EdgeInsets.symmetric(
                     horizontal: 40, //Horizntal padding
                     vertical: 20, //Vertical padding
                   ),
                 ),
-                child: Text(
+                child: const Text(
                   'Login',
                   style: TextStyle(
                     fontSize: 16,
