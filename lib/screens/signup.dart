@@ -1,6 +1,8 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 
+import 'home_page.dart';
+
 class SignUpScreen extends StatelessWidget {
   const SignUpScreen({Key? key}) : super(key: key);
 
@@ -10,9 +12,11 @@ class SignUpScreen extends StatelessWidget {
       body: Stack(
         children: [
           Container(
+            width: MediaQuery.of(context).size.width,
+            height: MediaQuery.of(context).size.height,
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage('assets/images/logo.jpeg'),
+                image: AssetImage('assets/images/common.jpeg'),
                 fit: BoxFit.cover,
               ),
             ),
@@ -46,6 +50,8 @@ class SignUpScreen extends StatelessWidget {
                   ElevatedButton(
                     onPressed: () {
                       // Implement sign up logic here
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => MyHomePage()));
                     },
                     style: ElevatedButton.styleFrom(
                       primary: Colors.pink, //Background color

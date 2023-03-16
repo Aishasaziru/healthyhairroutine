@@ -27,13 +27,13 @@ class intro extends StatelessWidget {
                   image: const AssetImage("images/logo.jpeg"),
                   fit: BoxFit.cover,
                   colorFilter: ColorFilter.mode(
-                      Color.fromARGB(255, 59, 155, 172).withOpacity(0.2),
+                      const Color.fromARGB(255, 59, 155, 172).withOpacity(0.2),
                       BlendMode.color),
                 ),
                 borderRadius: BorderRadius.circular(20),
               ),
             ),
-            Text(
+            const Text(
               "Your hair is your canvas",
               style: TextStyle(
                 color: Colors.pink,
@@ -75,7 +75,8 @@ class intro extends StatelessWidget {
                       builder: (context) => const SignUpScreen()));
                 },
                 style: TextButton.styleFrom(
-                  primary: Colors.pink,
+                  primary: Colors.white,
+                  backgroundColor: Colors.pink,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(19),
                   ),

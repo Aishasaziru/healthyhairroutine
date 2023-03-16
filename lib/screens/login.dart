@@ -1,5 +1,3 @@
-// ignore_for_file: unused_import
-
 import 'package:flutter/material.dart';
 import 'package:my_flutter_project/screens/home_page.dart';
 import './login.dart';
@@ -43,13 +41,6 @@ class LoginScreen extends StatelessWidget {
               const SizedBox(
                 height: 10,
               ),
-              TextFormField(
-                controller: passwordController,
-                decoration: const InputDecoration(
-                  labelText: 'Confirm Password',
-                ),
-                obscureText: true,
-              ),
               const SizedBox(
                 height: 10,
               ),
@@ -74,7 +65,8 @@ class LoginScreen extends StatelessWidget {
                       MaterialPageRoute(builder: (context) => MyHomePage()));
                 },
                 style: ElevatedButton.styleFrom(
-                  foregroundColor: Colors.white, primary: Colors.pink, //Text color
+                  foregroundColor: Colors.white,
+                  primary: Colors.pink, //Text color
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20), //Rounded coners
                   ),
