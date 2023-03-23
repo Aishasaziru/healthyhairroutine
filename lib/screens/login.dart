@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:my_flutter_project/screens/home_page.dart';
+import '../Utils/utils.dart';
+import '../controllers/auth_controller.dart';
 import './login.dart';
 import './signup.dart';
 
@@ -60,10 +63,18 @@ class LoginScreen extends StatelessWidget {
               ),
               const SizedBox(height: 16),
               ElevatedButton(
-                onPressed: () {
+                onPressed: () async {
                   // Handle login button press
-                  Navigator.of(context).push(
-                      MaterialPageRoute(builder: (context) => MyHomePage()));
+
+                  if (emailController.text.trim().isEmpty ||
+                      !emailController.text.trim().isEmail) {
+                    Utils.showError("Please Enter valid email!");
+                  } else if (passwordController.text.trim().isEmpty) {
+                    Utils.showError("No field should be empty!");
+                  } else {
+                    await AuthController.to.login(emailController.text.trim(),
+                        passwordController.text.trim());
+                  }
                 },
                 style: ElevatedButton.styleFrom(
                   foregroundColor: Colors.white,

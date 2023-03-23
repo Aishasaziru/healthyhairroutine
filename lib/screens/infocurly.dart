@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 class InfoCurly extends StatefulWidget {
   const InfoCurly({super.key});
 
