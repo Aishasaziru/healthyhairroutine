@@ -30,6 +30,7 @@ class LoginScreen extends StatelessWidget {
                 decoration: const InputDecoration(
                   labelText: 'Enter your Email',
                 ),
+                style: TextStyle(color: Colors.black),
               ),
               const SizedBox(
                 height: 10,
