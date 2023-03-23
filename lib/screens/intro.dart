@@ -5,8 +5,8 @@ import 'package:my_flutter_project/screens/signup.dart';
 import 'login.dart';
 
 // ignore: camel_case_types
-class intro extends StatelessWidget {
-  const intro({super.key});
+class Intro extends StatelessWidget {
+  const Intro({super.key});
 
   @override
   Widget build(BuildContext context) {

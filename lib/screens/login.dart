@@ -36,6 +36,7 @@ class LoginScreen extends StatelessWidget {
                 decoration: const InputDecoration(
                   labelText: 'Enter your Password',
                 ),
+                style: TextStyle(color: Colors.black),
                 obscureText: true,
               ),
               const SizedBox(
