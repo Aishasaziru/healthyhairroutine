@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:my_flutter_project/screens/info_init.dart';
 
+import '../lib/screens/info_init.dart';
+
 class MyHomePage extends StatelessWidget {
   MyHomePage({Key? key});
   Widget _buildImageCard(BuildContext context, String imagePath, String title) {
@@ -134,13 +136,11 @@ class MyHomePage extends StatelessWidget {
                 _buildImageCard(
                     context, "images/zee.jpeg", "Taking Care of Curly Hair"),
                 _buildImageCard(
-                    context, "images/common.jpeg", "How To Take Care of 3c"),
+                    context, "images/woman3c.jpg", "How To Take Care of 3c"),
+                _buildImageCard(context, "images/3b.jpg", "Taking Care of 3b"),
+                _buildImageCard(context, "images/4a.jpg", "Taking Cre of 4a"),
                 _buildImageCard(
-                    context, "images/her3b.webp", "Taking Care of 3b"),
-                _buildImageCard(
-                    context, "images/megan4a.webp", "Taking Cre of 4a"),
-                _buildImageCard(
-                    context, "images/teyonah4b.webp", "Taking Care of 4b"),
+                    context, "images/joanne.jpg", "Taking Care of 4b"),
                 _buildImageCard(
                     context, "images/kiki4c.webp", "Taking Care of 4c"),
               ],
