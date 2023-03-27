@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:my_flutter_project/screens/home_page.dart';
 import 'package:my_flutter_project/screens/signup.dart';
 
 import 'login.dart';
@@ -25,7 +24,7 @@ class Intro extends StatelessWidget {
                 height: MediaQuery.of(context).size.height * 0.5,
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                    image: const AssetImage("images/pink.png"),
+                    image: const AssetImage("images/logo.jpeg"),
                     fit: BoxFit.cover,
                     colorFilter: ColorFilter.mode(
                         const Color.fromARGB(255, 59, 155, 172)
@@ -33,6 +32,15 @@ class Intro extends StatelessWidget {
                         BlendMode.color),
                   ),
                   borderRadius: BorderRadius.circular(20),
+                ),
+              ),
+              const SizedBox(height: 20),
+              const Text(
+                "Your hair is your canvas",
+                style: TextStyle(
+                  color: Colors.pink,
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
               SizedBox(

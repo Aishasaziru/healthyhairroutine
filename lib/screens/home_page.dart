@@ -1,39 +1,49 @@
 import 'package:flutter/material.dart';
-import 'package:my_flutter_project/screens/info_init.dart';
-
-import '../lib/screens/info_init.dart';
+import 'package:get/get.dart';
+import 'package:my_flutter_project/controllers/main_controller.dart';
+import 'package:my_flutter_project/screens/hairtips_single.dart';
+import 'package:my_flutter_project/screens/product_screen.dart';
+import 'package:my_flutter_project/screens/services_screen.dart';
 
 class MyHomePage extends StatelessWidget {
   MyHomePage({Key? key});
-  Widget _buildImageCard(BuildContext context, String imagePath, String title) {
+  Widget _buildImageCard(BuildContext context, Map<String, dynamic> data) {
     return GestureDetector(
       onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => const InfoImage()),
-        );
+        Get.to(() => HairTipsSingle(tip: data));
       },
-      child: Card(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Expanded(
-              child: Image.asset(
-                imagePath,
-                fit: BoxFit.cover,
+      child: Container(
+        height: 300,
+        width: Get.width * .45,
+        margin: EdgeInsets.only(bottom: 10),
+        child: Card(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Expanded(
+                child: data["image"] == null || data["image"] == ""
+                    ? Image.asset(
+                        "images/logo.jpeg",
+                        fit: BoxFit.cover,
+                      )
+                    : Image.network(
+                        "${data["image"]}",
+                        fit: BoxFit.cover,
+                      ),
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Text(
-                title,
-                style: const TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 16,
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                  "${data["title"]}",
+                  style: const TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 16,
+                  ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
@@ -47,107 +57,146 @@ class MyHomePage extends StatelessWidget {
         automaticallyImplyLeading: false,
         title: const Text("Healthy Hair Routine Tips"),
         actions: [
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(
-              Icons.search,
-              color: Colors.white,
-            ),
-          )
+          // IconButton(
+          //   onPressed: () {},
+          //   icon: const Icon(
+          //     Icons.search,
+          //     color: Colors.white,
+          //   ),
+          // )
+          PopupMenuButton(
+              // add icon, by default "3 dot" icon
+              // icon: Icon(Icons.book)
+              itemBuilder: (context) {
+            return [
+              const PopupMenuItem<int>(
+                value: 0,
+                child: Text("Products"),
+              ),
+              const PopupMenuItem<int>(
+                value: 1,
+                child: Text("Services"),
+              ),
+            ];
+          }, onSelected: (value) {
+            if (value == 0) {
+              Get.to(() => const ProductScreen());
+            }
+            if (value == 1) {
+              Get.to(() => const ServiceScreen());
+            }
+          }),
         ],
       ),
       //MAIN CONTENT
-      body: Container(
-        padding: const EdgeInsets.all(16),
-        child: ListView(
-          children: [
-            //IMAGE
-            GestureDetector(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const InfoImage()),
-                );
-              },
-              child: Container(
-                height: 200,
-                decoration: const BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage("images/hairmask.png"),
-                    fit: BoxFit.cover,
+      body: Obx(() {
+        return Container(
+          padding: const EdgeInsets.all(16),
+          width: Get.width,
+          height: Get.height,
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                //IMAGE
+
+                MainController.to.hairTips.isNotEmpty
+                    ? GestureDetector(
+                        onTap: () {
+                          Get.to(() => HairTipsSingle(
+                                tip: MainController
+                                    .to.hairTips.entries.first.value,
+                              ));
+                        },
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Container(
+                              height: 200,
+                              width: Get.width,
+                              decoration: BoxDecoration(
+                                image: DecorationImage(
+                                  image: NetworkImage(MainController.to.hairTips
+                                      .entries.first.value["image"]),
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
+                            ),
+                            const SizedBox(
+                              height: 20,
+                            ),
+                            //TITTLE,SUBTITLE SECTION
+                            Padding(
+                              padding:
+                                  const EdgeInsets.only(left: 20, right: 20),
+                              child: Row(
+                                children: [
+                                  Expanded(
+                                      child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        "${MainController.to.hairTips.entries.first.value["title"]}",
+                                        style: const TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 16),
+                                      ),
+                                      const SizedBox(
+                                        height: 2,
+                                      ),
+                                    ],
+                                  )),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      )
+                    : Container(),
+                //SPACE
+                const SizedBox(
+                  height: 30,
+                ),
+                //ACTION SECTION
+                // Padding(
+                //   padding: const EdgeInsets.symmetric(horizontal: 20),
+                //   child: Row(
+                //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                //     children: [],
+                //   ),
+                // ),
+                // const Expanded(
+                //   child: Padding(
+                //     padding: EdgeInsets.symmetric(horizontal: 20),
+                //   ),
+                // ),
+
+                //SPACE
+                // const SizedBox(
+                //   height: 20,
+                // ),
+                //IMAGES GRIDVIEW
+                SizedBox(
+                  width: Get.width,
+                  child: Wrap(
+                    // crossAxisCount: 2,
+                    // shrinkWrap: true,
+                    // physics: const NeverScrollableScrollPhysics(),
+                    runAlignment: WrapAlignment.start,
+                    alignment: WrapAlignment.spaceBetween,
+
+                    // runSpacing: Get.width * 0.1,
+                    children:
+                        MainController.to.hairTips.entries.skip(1).map((e) {
+                      return _buildImageCard(context, e.value);
+                    }).toList(),
                   ),
                 ),
-              ),
-            ),
-            //SPACE
-            const SizedBox(
-              height: 20,
-            ),
-            //TITTLE,SUBTITLE SECTION
-            Padding(
-              padding: const EdgeInsets.only(left: 20, right: 20),
-              child: Row(
-                children: [
-                  Expanded(
-                      child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: const [
-                      Text(
-                        "HAIR MASK",
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 16),
-                      ),
-                      SizedBox(
-                        height: 2,
-                      ),
-                    ],
-                  )),
-                ],
-              ),
-            ),
-            //SPACE
-            const SizedBox(
-              height: 30,
-            ),
-            //ACTION SECTION
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [],
-              ),
-            ),
-            const Expanded(
-              child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20),
-              ),
-            ),
-
-            //SPACE
-            const SizedBox(
-              height: 20,
-            ),
-            //IMAGES GRIDVIEW
-            GridView.count(
-              crossAxisCount: 2,
-              shrinkWrap: true,
-              physics: const NeverScrollableScrollPhysics(),
-              children: [
-                _buildImageCard(
-                    context, "images/zee.jpeg", "Taking Care of Curly Hair"),
-                _buildImageCard(
-                    context, "images/woman3c.jpg", "How To Take Care of 3c"),
-                _buildImageCard(context, "images/3b.jpg", "Taking Care of 3b"),
-                _buildImageCard(context, "images/4a.jpg", "Taking Cre of 4a"),
-                _buildImageCard(
-                    context, "images/joanne.jpg", "Taking Care of 4b"),
-                _buildImageCard(
-                    context, "images/kiki4c.webp", "Taking Care of 4c"),
               ],
             ),
-          ],
-        ),
-      ),
+          ),
+        );
+      }),
     );
   }
 }

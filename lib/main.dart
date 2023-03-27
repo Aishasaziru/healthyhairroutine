@@ -7,7 +7,6 @@ import 'package:my_flutter_project/screens/login.dart';
 
 import 'controllers/main_binding.dart';
 import 'firebase_options.dart';
-import 'screens/home_page.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();

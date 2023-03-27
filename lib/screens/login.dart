@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:my_flutter_project/screens/home_page.dart';
 import '../Utils/utils.dart';
 import '../controllers/auth_controller.dart';
 import './login.dart';
@@ -30,7 +29,6 @@ class LoginScreen extends StatelessWidget {
                 decoration: const InputDecoration(
                   labelText: 'Enter your Email',
                 ),
-                style: TextStyle(color: Colors.black),
               ),
               const SizedBox(
                 height: 10,
