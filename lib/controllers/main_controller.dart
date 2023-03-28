@@ -42,7 +42,7 @@ class MainController extends GetxController {
     //https://wa.me/whatsappphonenumber?text=urlencodedtext
     var _url = Uri(
       scheme: 'https',
-      path: 'wa.me/0700000000',
+      path: 'wa.me/0722590386',
       queryParameters: <String, String>{
         'text': Uri.encodeComponent(
             'Hello, I am interested in the product: $productName'),
@@ -58,7 +58,7 @@ class MainController extends GetxController {
     //https://wa.me/whatsappphonenumber?text=urlencodedtext
     var _url = Uri(
       scheme: 'https',
-      path: 'wa.me/0700000000',
+      path: 'wa.me/0722590386',
       queryParameters: <String, String>{
         'text': Uri.encodeComponent(
             'Hello, I am interested in the service: $serviceName'),
