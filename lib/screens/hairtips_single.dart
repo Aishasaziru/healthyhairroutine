@@ -3,6 +3,8 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
 
+import '../controllers/main_controller.dart';
+
 class HairTipsSingle extends StatelessWidget {
   const HairTipsSingle({super.key, required this.tip});
   final Map tip;
@@ -49,26 +51,30 @@ class HairTipsSingle extends StatelessWidget {
                     // )
                   ],
                 ),
-                subtitle: Text("${tip["description"] ?? ""}"),
+                subtitle: Text(
+                    ("${tip["content"] ?? ""}").replaceAll(r"\n ", "\n\n")),
               ),
               SizedBox(
                 height: 30,
               ),
-              // Container(
-              //     width: Get.width * .6,
-              //     height: 45,
-              //     decoration: BoxDecoration(
-              //         color: Colors.pink,
-              //         borderRadius: BorderRadius.circular(20)),
-              //     child: TextButton(
-              //         onPressed: () {},
-              //         child: Text(
-              //           "Buy Now",
-              //           style: TextStyle(
-              //               color: Colors.white,
-              //               fontSize: 16,
-              //               fontWeight: FontWeight.bold),
-              //         )))
+              Container(
+                  width: Get.width * .6,
+                  height: 45,
+                  decoration: BoxDecoration(
+                      color: Colors.pink,
+                      borderRadius: BorderRadius.circular(20)),
+                  child: TextButton(
+                      onPressed: () async {
+                        await MainController.to
+                            .openUrl("${tip["video"] ?? ""}");
+                      },
+                      child: Text(
+                        "View Video",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold),
+                      )))
             ],
           ),
         ),

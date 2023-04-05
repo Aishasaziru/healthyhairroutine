@@ -4,6 +4,7 @@ import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:get/get.dart';
 import 'package:my_flutter_project/screens/intro.dart';
 import 'package:my_flutter_project/screens/login.dart';
+import 'package:my_flutter_project/screens/splash_screen.dart';
 
 import 'controllers/main_binding.dart';
 import 'firebase_options.dart';
@@ -41,7 +42,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.pink,
       ),
-      home: Intro(),
+      home: SplashScreen(),
     );
   }
 }

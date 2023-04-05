@@ -65,7 +65,7 @@ class ServicesSingle extends StatelessWidget {
                             .sendBuyRequest("${service["title"] ?? "service"}");
                       },
                       child: Text(
-                        "Buy Now",
+                        "Book Appointment",
                         style: TextStyle(
                             color: Colors.white,
                             fontSize: 16,

@@ -68,4 +68,13 @@ class MainController extends GetxController {
       print('Could not launch $_url');
     }
   }
+
+  //Send service request via whatsapp
+  Future<void> openUrl(videoUrl) async {
+    //https://wa.me/whatsappphonenumber?text=urlencodedtext
+    var _url = Uri.parse(videoUrl);
+    if (!await launchUrl(_url)) {
+      print('Could not launch $_url');
+    }
+  }
 }

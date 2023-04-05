@@ -30,6 +30,22 @@ class AuthController extends GetxController {
     //track user data changes
     firebaseUser.bindStream(auth.userChanges());
     //If user changes to null, send user to login screen
+    //ever(firebaseUser, _setInitialScreen);
+  }
+
+  afterSplash() async {
+    if (firebaseUser.value == null) {
+      // if the user is not found then the user is navigated to the Register Screen
+      Get.offAll(() => const Intro());
+    } else {
+      Utils.showLoading(message: "Fetching Profile...");
+      var fsUser = await users.doc(firebaseUser.value?.uid).get();
+      firebaseUserData.value.addAll(
+          fsUser.data() == null ? {} : fsUser.data() as Map<String, dynamic>);
+      update();
+      Get.offAll(() => MyHomePage());
+      Utils.dismissLoader();
+    }
     ever(firebaseUser, _setInitialScreen);
   }
 

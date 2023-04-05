@@ -24,7 +24,7 @@ class Intro extends StatelessWidget {
                 height: MediaQuery.of(context).size.height * 0.5,
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                    image: const AssetImage("images/pink.jpg"),
+                    image: const AssetImage("images/Pink.png"),
                     fit: BoxFit.cover,
                     colorFilter: ColorFilter.mode(
                         const Color.fromARGB(255, 59, 155, 172)
