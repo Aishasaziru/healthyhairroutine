@@ -35,14 +35,6 @@ class Intro extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 20),
-              const Text(
-                "Your hair is your canvas",
-                style: TextStyle(
-                  color: Colors.pink,
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
               SizedBox(
                 height: 15,
               ),
