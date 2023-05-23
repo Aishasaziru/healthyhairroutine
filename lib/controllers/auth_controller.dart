@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_typing_uninitialized_variables
+// ignore_for_file: prefer_typing_uninitialized_variables, invalid_use_of_protected_member
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -80,7 +80,9 @@ class AuthController extends GetxController {
 
         if (!fsUser.exists) {
           await users.doc(user.uid).set({
+            // ignore: unnecessary_string_interpolations
             "fullName": "$fullName",
+            // ignore: unnecessary_string_interpolations
             "email": "$email",
           });
         }
